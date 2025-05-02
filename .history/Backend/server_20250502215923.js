@@ -27,11 +27,6 @@ connection.once('open', () => {
     console.log('MongoDB connection success!')
 })
 
-const studentRouter = require('./routes/students')
-
-app.use('/students', studentRouter)
-
-
 
 app.listen(port, () => {
     console.log(`Server is up and running on port is ${port}`)

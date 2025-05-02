@@ -21,16 +21,10 @@ mongoose.connect(URL, {
 })
 
 
-
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB connection success!')
 })
-
-const studentRouter = require('./routes/students')
-
-app.use('/students', studentRouter)
-
 
 
 app.listen(port, () => {
