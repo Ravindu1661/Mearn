@@ -29,7 +29,7 @@ connection.once('open', () => {
 
 const studentRouter = require('./routes/students')
 
-app.use('/student', studentRouter)
+app.use('/students', studentRouter)
 
 
 

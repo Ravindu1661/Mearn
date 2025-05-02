@@ -53,7 +53,7 @@ router.route('/update/:id').put(async (req, res) => {
     const update = await Student.findByIdAndUpdate(userId, updateStudent)  //findbyone දුන්නම යූසර්ගේ නම,id,nic නම්බර්ස් ඇතුලත් කොට ඔහුගේ විස්තර අප්ඩේට් කරන්න්න පුලලුවන්
 
         .then(() => {
-            res.status(200).send({ status: "User updated", })
+            res.status(200).send({ status: "User updated",user: update })
         }).catch((err) => {
             console.log(err)
             res.status(500).send({ status: "Error with updating data", error: err.message })
@@ -83,6 +83,8 @@ router.route('/get/:id').get(async (req, res) => {
             res.status(500).send({ status: "Error with get user", error: err.message })
         })
 })
+
+/
 
 
 

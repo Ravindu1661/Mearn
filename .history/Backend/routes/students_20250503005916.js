@@ -73,11 +73,22 @@ let userId = req.params.id
 });
 
 
+// router.route('/get/:id').get(async (req, res) => {
+//     let userId = req.params.id
+//     const user = await Student.findById(userId)
+//         .then((student) => {
+//             res.status(200).send({ status: "User fetched", student })
+//         }).catch((err) => {
+//             console.log(err.message)
+//             res.status(500).send({ status: "Error with get user", error: err.message })
+//         })
+// })
+
 router.route('/get/:id').get(async (req, res) => {
     let userId = req.params.id
     const user = await Student.findById(userId)
-        .then((student) => {
-            res.status(200).send({ status: "User fetched", student })
+        .then(() => {
+            res.status(200).send({ status: "User fetched", user : user })
         }).catch((err) => {
             console.log(err.message)
             res.status(500).send({ status: "Error with get user", error: err.message })
